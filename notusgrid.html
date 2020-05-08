@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notus front-end test</title>
+	<link rel="stylesheet" href="notusgridstyles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+	<nav id="Tasksix" class="grid2">
+		<div id="menu-wrap">Menu
+			<a onclick="showMenu(0)">
+				<img src="notus-meni-close.svg" alt="menuexit"></a>
+		</div>		
+		<div class="logo-wrap" id="menilogo">
+			<img src="Notus-logo-main.svg" alt="logomain">
+		</div>
+		<div class="menulist">
+					<a class="taskbox" id="taskbox1" href="#anchthree" onclick="showMenu(0)">TASK 3</a>
+					<a class="taskbox" id="taskbox2" href="#anchfour" onclick="showMenu(0)">TASK 4</a>
+					<a class="taskbox" id="taskbox3" href="#anchfive" onclick="showMenu(0)">TASK 5</a>
+		</div>
+	</nav>		
+	<script>
+			var sliderIndex = 1;
+			showSlides(sliderIndex);
+			function iduci(n) {
+				showSlides(sliderIndex += n);
+			}
+			function showSlides(n) {
+				var slides = document.getElementById("Tasktwo");
+				var stranice =document.getElementById("brstr");
+				if (n>3) {sliderIndex=1}
+				if (n < 1) {sliderIndex=3}
+				slides.style.backgroundImage="url(b"+sliderIndex+".jpg)";
+				stranice.InnerHTML=sliderIndex+"/3";
+
+			}
+		</script>	
+				
+<main id="maincont">	
+	<div id="Tasktwo" class="grid">
+		<div id="menu-wrap">
+			Menu
+			<a onclick="showMenu(1)">
+				<img src="notus-meni.svg" alt="menuexit">
+			</a>
+		</div>			
+		<div class="logo-wrap">
+			<img src="Notus-logo-main.svg" alt="logomain">
+		</div>
+		<div id="pretitle-wrap">Notus front-end test</div>
+		<div id="slid-nav-wrap">
+			<button id="prev" onclick="iduci(-1)"></button>
+			<span id="brstr">1/3</span>
+			<button id="next" onclick="iduci(1)"></button>
+		</div>
+		<div id="bg-wrap"></div>	
+	</div>
+	<script>
+			function showMenu(n) {
+				var j=0;
+				var menupage = document.getElementById("Tasksix");
+				var maincontent=document.getElementById("maincont");
+				var footercont=document.getElementById("footerlogo");
+				if(n==0){
+					menupage.style.display="none";
+					footercont.style.display="grid";
+					maincontent.style.display="grid";
+				}
+				if(n==1){
+					menupage.style.display="grid";
+					maincontent.style.display="none";
+					footercont.style.display="none";
+				}
+			}
+			
+	</script>
+
+	<div id="Taskthree" class="grid">
+		<div class="title-wrap">Task 3</div>
+		<div id="text-wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duo Reges: constructio interrete. Ut aliquid scire se gaudeant? Illi enim inter se dissentiunt. Nec vero sum nescius esse utilitatem in historia, non modo voluptatem. Quamquam te quidem video minime esse deterritum.
+		</div>
+		<div id="gallery-wrap">
+			<div class="gal-cont" id="slika1"><img src=notus-task2-img4.jpg></div>
+			<div class="gal-cont" id="slika2"><img src=notus-task2-img1.jpg></div>
+			<div class="gal-cont" id="slika3"><img src=notus-task2-img2.jpg></div>
+			<div class="gal-cont" id="slika4"><img src=notus-task2-img3.jpg></div>
+		</div>	
+	</div>
+
+	<div id="Taskfour" class="grid">
+		<div class="title-wrap">Task 4</div>
+		<div id="slider-galerija">	
+			<div class="slider-cont" id="lijeva"></div>
+			<div class="slider-cont" id="srednja"></div>
+			<div class="slider-cont" id="desna"></div>
+		</div>
+		<button id="prevy" onclick="nextgal(-1)"></button>
+		<button id="nexty" onclick="nextgal(-1)"></button>
+
+		<script>
+		var galerijaIndex= 1;
+		var midi=2;
+		var righti=3;
+			showGalery(galerijaIndex);
+			function nextgal(m){
+				midi+=m;
+				righti+=m;
+				galerijaIndex+=m
+				showGalery(galerijaIndex);
+			}
+			function showGalery(m){
+				var left=document.getElementById("lijeva");
+				var mid=document.getElementById("srednja");
+				var right=document.getElementById("desna");
+				if(galerijaIndex===5){
+					galerijaIndex=1;
+				}
+				if(galerijaIndex<1){
+					galerijaIndex=4;
+				}
+				if(midi===5){
+					midi=1;
+				}
+				if(midi<1){
+					midi=4;
+				}
+				if(righti==5){
+					righti=1;
+				}
+				if(righti<1){
+					righti=4;
+				}
+				left.style.backgroundImage="url("+galerijaIndex+".jpg)";
+				mid.style.backgroundImage="url("+midi+".jpg)";
+				right.style.backgroundImage="url("+righti+".jpg)";
+			}
+		</script>
+	</div>
+	<div id="Taskfive" class="grid">
+		<div id="mapa">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2782.1812709996516!2d16.026192815474026!3d45.787596019827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476679e4631b5479%3A0xf397a6cfa8839863!2sNotus%20IT%20d.o.o.!5e0!3m2!1shr!2shr!4v1588088665711!5m2!1shr!2shr" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+			</iframe>
+		</div>
+		<div class="title-wrap">Task 5</div>
+		<div class="text-container">
+			<div class="tparatext">
+				<p>Quas enim kakaw Graeci appellant, vitia malo quam malitias nominare. Idem adhuc; Idemque diviserunt naturam hominis in animum et corpus. Istam voluptatem, inquit, Epicurus ignorat? Duo enim genera quae erant, fecit tria.	
+				<span id="drukciji"> Ut proverbia non nulla veriora sint quam vestra dogmata
+				</span>
+				An haec ab eo non dicuntur? Idcirco enim non desideraret, quia, quod dolore caret, id in voluptate est. Quoniam, si dis placet, ab Epicuro loqui discimus. Quid sequatur, quid repugnet, vident.
+				</p>
+			</div>
+		</div>
+		<button class="fillme"> Hover to have solid fill </button>
+	</div>
+	<footer id="footerlogo" class="grid">
+		<div class="copyright-contain">
+			<!--<p>© 2019. Notus IT d.o.o.</p>-->
+		</div>
+		<div class="mainfooter">
+			<div class="logo-contain"></div>
+		</div>
+	</footer>
+
+</main>
+</body>
+</html>
