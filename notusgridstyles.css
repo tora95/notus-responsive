@@ -9,6 +9,11 @@ body{
 	height: auto;	
 	overflow-x: hidden;
 	width: 100%;
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+}
+main{
+	margin-bottom: 10vh;		
 }
 
 img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
@@ -29,9 +34,11 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 		". slide-nav .";
 	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows:1fr 4fr 1fr;
-	background:transparent url('b1.jpg') 0% 0% no-repeat padding-box;
-	background-size: cover;
+	width: 100vw;
+
+	background:transparent url(b1.jpg) 0% 0% no-repeat padding-box;
 }
+
 		
 #menu-wrap{
 	grid-area:menu;
@@ -43,8 +50,15 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	font-size: 0.8rem;
 	text-align: left;
 	color: #FFFFFF;
+	font-family: Montserrat;
 }
+#menu-wrap p{
+	margin-bottom: 2vh;
+	font-family: Montserrat;
+	color: #FFFFFF;
+	text-align: left;
 
+}
 
 .logo-wrap{
 	grid-area:logo;
@@ -52,16 +66,16 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	opacity: 1;
 	height: 6.25vw;
 	width: 6.25vw;
-	max-height: auto;
-	max-width: 100%;
-	justify-self:center;
-	align-self: center;
+	min-width: 80px;
+}
+#logopic{	
+	opacity: 0.1;
 }
 
 #menilogo{
-	opacity: 1;
-	background-color:#000000;
-	z-index: 2		;
+	opacity: 0.1;
+	background:#000000 0% 0% no-repeat padding-box;
+	z-index: 1;
 }
 
 .bg-wrap{
@@ -73,15 +87,15 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 #pretitle-wrap{
 	grid-area: titletext;
+	margin: auto;
 	justify-self: center;
 	align-self: center;
 	max-width: 80vw;
-	white-space: nowrap;
+	white-space: normal;
 	text-align: center;
 	font-family:Montserrat;
-	font-size:1.7em;
-	line-height: 4.6em;
-	letter-spacing: 0;
+	font-size:3rem;
+	line-height: 3rem;
 	font-weight: Bold;
 	opacity: 1;
 	color:#FFFFFF;
@@ -89,6 +103,8 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 #Tasktwo #slid-nav-wrap{
 	grid-area: slide-nav;
+	grid-template-columns: 30px 80px 30px;
+	grid-template-areas: "prije broj poslije";
 	margin:5%;
 	max-height: 30px;
 	justify-self:center;
@@ -104,9 +120,11 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	justify-content: start;
 	align-self: center;
 	justify-self:center;
+	grid-area: poslije;
 }
 
 #next{
+	grid-area: prije;
 	background:transparent url("next (1).svg") 0% 0% no-repeat padding-box;
 	transform:matrix(-1,0,0,-1,0,0);
 	height: 30px;
@@ -115,18 +133,18 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	margin-left:30px;
 }
 #brstr{
+	grid-area: broj;
 	margin: auto;
-	justify-self: center;
-	align-self: center;
 	text-transform: uppercase;
 	color:#FFFFFF;
 	opacity: 0.6;
 	font-size: 1rem;
+	font-family: Montserrat;
 }
 #Taskthree{
 	height:auto;
 	grid-template-columns: 1fr 1.5fr 1fr;
-	grid-template-rows: 0.5fr 4fr 4fr;
+	grid-template-rows: 0.5fr 2fr 8fr;
 	grid-template-areas:
 	 ". title-wrap1 ."
 	 ". text-wrap1 ."
@@ -143,7 +161,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	text-align: center;
 	line-height: 3.2rem;
 	margin-top:2vh;
-	margin-bottom: 1vh;
+	margin-bottom: 5vh;
 	color:#FFFFFF;
 	white-space: nowrap;
 }
@@ -173,12 +191,10 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	margin:auto;
 	display: grid;	
 	width:990px;
-	max-width: 95vw;
+	max-width: 90vw;
 	grid-column-gap: 1.8rem;
 	grid-row-gap: 1.8rem;
-	justify-content: center;
-	align-self: center;	
-	justify-self:center;
+	
 	grid-area:gallery-wrap;
 	grid-template-columns: 1fr 1.7741fr 1fr;
 	grid-template-rows: 2fr 1fr 1fr 2fr;
@@ -224,14 +240,14 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 #Taskfour{
 	max-height:87vh;
-	height: 923px;
-	grid-template-columns: 1.5fr 0.5fr 5fr 0.5fr 1.5fr;
-	grid-template-rows:1fr 2fr;
+	height:87vh;
+	width: 100vw;
+	justify-content: center;
+	grid-template-rows:1fr 3fr;
 	grid-template-areas: 
-		". . title-wrap . ."
-		". lgumb slider-gal dgumb .";
+		"title-wrap "
+		"slider-gal";
 	background-color: #081b2f;
-	max-height: 923px;
 }
 
 
@@ -241,7 +257,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	align-self: center;
 	font-family:Montserrat;
 	font-weight:bold;
-	font-size: 2em;
+	font-size: 3rem;
 	max-height: 73px;
 	height: auto;
 	line-height: 4.5625rem;
@@ -252,43 +268,48 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 
 #slider-galerija{
+	margin: auto;
 	grid-area:slider-gal;
 	display: grid;
-	grid-template-columns: 2fr 2fr 2fr;
-	grid-column-gap: 2rem;
-	min-width: 60vw;
+	grid-template-columns: 1fr 11fr 11fr 11fr 1fr;
+	grid-column-gap: 2vw;	
+	height: 50.92592vh;
 	max-height: 50.9259vh;
-	max-width: 82vw;
-	height:310px;
-	width: 100%;
-	grid-template-areas: "lijeva srednja desna";
-	margin:auto;
+	width:90vw;
+	max-width: 1050px;
+	grid-template-areas: "lgumb lijeva srednja desna dgumb";
 }
-#slider-galerija > .slider-cont{
-	height: 100%;
-}
+/*#slider-galerija > .slider-cont{
+	height: auto;
+	min-height: 300px;
+	min-height: 510px;
+	margin: auto;
+*/}
 .slider-cont{
-	max-width: 16.14583vw;
-	max-height: 50.92592vh;
-	width:310px;
-	height: 550px;
-	background-size: contain;
-	background-repeat: no-repeat;
+	height: 50.92592vh;
+	min-width: 80px;
+	width:16.14583vw;
+	min-height: 500px;
 }
 
 #lijeva{
 	background: transparent url("1.jpg") 0% 0% no-repeat padding-box;
 	grid-area: lijeva;
 	background-size: contain;
-	justify-content: center;
-	justify-self:center;
+	height: 50.92592vh;
+	margin: auto;
 }
 #srednja{
 	background: transparent url("2.jpg") 0% 0% no-repeat padding-box;
 	grid-area: srednja;
-	background-size: contain;	
+	background-size: contain;
+	height: 50.92592vh;
+	margin: auto;
 }
+
 #desna{
+	height: 50.92592vh;
+	margin: auto;
 	background: transparent url("3.jpg") 0% 0% no-repeat padding-box;
 	grid-area:desna;
 	background-size: contain;
@@ -298,10 +319,8 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	width: 30px;
 	height: 30px;
 	border:none;
-	align-self: center;
-	justify-self:center;
-	justify-content: center;
 	grid-area:lgumb;
+	margin: auto;
 }
 
 #nexty{
@@ -309,9 +328,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	width: 30px;
 	height: 30px;
 	border:none;
-	justify-self: center;
-	justify-content: center;
-	align-self: center;
+	margin: auto;
 	transform:matrix(-1,0,0,-1,0,0);
 	grid-area: dgumb;
 }
@@ -319,8 +336,10 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 
 #Taskfive{
-	height: auto;
-	grid-template-rows: 1fr 0.5fr 1fr 0.5fr;
+	height:auto;
+	max-height:1500px;
+	margin: auto;
+	grid-template-rows: 3fr 0.1fr 1fr 0.5fr;
 	grid-template-columns:1fr 2fr 1fr;
 	grid-template-areas:
 		"mapa mapa mapa"
@@ -331,22 +350,25 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 #Taskfive .title-wrap{
 	grid-area: title-wrap;
-
+	margin-top:100px;
 	font-family:Montserrat;
 	font-weight:bold;
 	font-size: 3rem;
 	line-height: 73px;
-	margin:1em;
 	color:#081B2F;
 }
 #mapa{
 	grid-area:mapa;
+	max-height:600px;
+	height: 55.555vh;
+	width: 100%;
+	margin:0;
 }
 
 #drukciji{
 	text-align: center;
 	font-size: 1.2rem;
-	line-height: 30px;
+	line-height: 0.5fr;
 	font-weight: bold;
 	letter-spacing: 0px;
 	color: #42BEB2;
@@ -359,14 +381,17 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 }
 .text-container{
 	grid-area:textdio;
-	width: 60vw;
+	min-width: 60vw;
 	height: auto;
+	margin-bottom: 2em;
+	margin-left: auto;
+	margin-right: auto;
 }
 .tparatext p{
 	text-align: center;
 	font-family: Montserrat;
-	font-size: 1.2em;
-	line-height: 1.9em;
+	font-size: 1.2fr;
+	line-height: 1.5fr;
 	letter-spacing: 0px;
 	color: #5C5C5C;
 	opacity: 1;
@@ -374,10 +399,9 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	justify-content: center;
 }
 .fillme{
-	width: 300px;
-	max-width: 100%;
-	height: auto;
-	height: 120px;
+	max-width: 300px;
+	max-height: 9.375vh;
+	height: 9.375vh;
 	grid-area:hbutton;
 	border: 5px solid #F89D36;
 	opacity: 1;
@@ -388,6 +412,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	font-weight: bold;
 	justify-self: center;
 	align-self: center;
+	margin: auto;
 
 }
 .fillme:hover{
@@ -396,46 +421,36 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 }
 
 #footerlogo{
-	height:auto;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-columns: 1fr 5fr 1fr;
-	grid-template-areas:
-		". copyr ." "logo copyr logo" "logo logo logo" "logo logo logo" "logo logo logo";
+	height: 23.148148vh;
+	grid-template-rows: repeat(5,auto);
+	grid-template-columns: 1fr 3.48fr 1fr;
+	max-width: 1920px;
+	justify-content: center;
 }
 
 .copyright-contain{
-	grid-area: copyr;
-	width: 66.5%;
-	height: 9.259259vh;
-	background: #42BEB2 0% 0% no-repeat padding-box;
-	opacity: 1;
-	text-align:center;
-	vertical-align: middle;
+	width:62.5vw;
+	height:9.25925vh;
 	z-index: 2;
-
+	grid-area: copyra;
+	grid-row: 1/2;
+	grid-column: 2/2;
+	background: #42BEB2 0% 0% no-repeat padding-box;
+	margin: auto;
 }
 .mainfooter{
-	grid-area:logo;
+	height:18.5185vh;
+	width: 62.5vw;
+	grid-column:2/2;
+	grid-row: 2/3;
+	grid-area: boja;
+	background-color: #081B2F;
 }
-#footerlogo .mainfooter{
-	width: 100%;
-	height: 200px;
-	background: #081B2F 0% 0% no-repeat padding-box;
-	opacity: 1;
+.logo-contain{
+	background-color:#081B2F;
+	grid-area: logo
 }
-.copyright-contain p{
-	transform: matrix(1, 0, 0, 1, 0, 0);
-	text-align: center;
-	font-family:Montserrat;
-	font-size: 18px;
-	line-height: 30px;
-	letter-spacing: 0px;
-	color: #FFFFFF;
-	opacity: 1;
-	margin:auto;
-	align-self: center;
-	justify-content: center;
-}	
+
 
 #Tasksix{
 	display: none;
@@ -476,7 +491,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	display: block;
 	width:auto;
 	text-align: left;
-	font: Bold 60px/73px Montserrat;
+	font: Bold 3.2rem/3.6rem Montserrat;
 	letter-spacing: 0px;
 	color: #FFFFFF;
 	opacity: 1;
@@ -484,3 +499,65 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	white-space: nowrap;
 	text-decoration: none;
 }
+
+
+
+#Footertag{
+	width: 100vw;
+	grid-template-columns: 3fr 10fr 3fr;
+	grid-template-areas: "Bluefoot Bluefoot bluefoot";
+	height: 18.158vh;
+	margin-bottom: 0;
+}
+
+#Bluefoot{
+	display: flex;
+	position: relative;
+	top: 0px;
+	bottom: 0px;
+	width: 100vw;
+	height: 18.15185vh;
+	max-height:200px;
+	background-color: #081B2F;
+
+
+}
+
+/*#footerlogopic img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+*/
+
+#Lightfoot{
+	display: flex;
+	position: absolute;
+	bottom:13.50vh;
+	width: 62.5vw;
+	height: 9.259259vh;
+	left: 18.75vw;
+	background-color: #42BEB2;
+	z-index: 2; 
+	justify-content: center;
+	text-align: center;
+	}
+
+#footerlogopic{
+	margin: auto;
+	width:9.375vw;
+	height:4.73981vh;
+	min-width: 100px;
+}
+
+#Lightfoot p{
+	transform: matrix(1, 0, 0, 1, 0, 0);
+	text-align: center;
+	font-family:Montserrat;
+	font-size: 2vh;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	opacity: 1;
+	margin:auto;
+}	

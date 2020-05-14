@@ -9,7 +9,8 @@
 </head>
 <body>
 	<nav id="Tasksix" class="grid2">
-		<div id="menu-wrap">Menu
+		<div id="menu-wrap">
+			<p>Exit</p>
 			<a onclick="showMenu(0)">
 				<img src="notus-meni-close.svg" alt="menuexit"></a>
 		</div>		
@@ -17,9 +18,9 @@
 			<img src="Notus-logo-main.svg" alt="logomain">
 		</div>
 		<div class="menulist">
-					<a class="taskbox" id="taskbox1" href="#anchthree" onclick="showMenu(0)">TASK 3</a>
-					<a class="taskbox" id="taskbox2" href="#anchfour" onclick="showMenu(0)">TASK 4</a>
-					<a class="taskbox" id="taskbox3" href="#anchfive" onclick="showMenu(0)">TASK 5</a>
+					<a class="taskbox" id="taskbox1" href="#Taskthree" onclick="showMenu(0)">TASK 3</a>
+					<a class="taskbox" id="taskbox2" href="#Taskfour" onclick="showMenu(0)">TASK 4</a>
+					<a class="taskbox" id="taskbox3" href="#Taskfive" onclick="showMenu(0)">TASK 5</a>
 		</div>
 	</nav>		
 	<script>
@@ -28,13 +29,13 @@
 			function iduci(n) {
 				showSlides(sliderIndex += n);
 			}
-			function showSlides(n) {
+			function showSlides(n) {		
 				var slides = document.getElementById("Tasktwo");
 				var stranice =document.getElementById("brstr");
 				if (n>3) {sliderIndex=1}
 				if (n < 1) {sliderIndex=3}
 				slides.style.backgroundImage="url(b"+sliderIndex+".jpg)";
-				stranice.InnerHTML=sliderIndex+"/3";
+				stranice.innerHTML=sliderIndex+"/3";
 
 			}
 		</script>	
@@ -42,7 +43,9 @@
 <main id="maincont">	
 	<div id="Tasktwo" class="grid">
 		<div id="menu-wrap">
+			<p>
 			Menu
+			</p>
 			<a onclick="showMenu(1)">
 				<img src="notus-meni.svg" alt="menuexit">
 			</a>
@@ -63,16 +66,16 @@
 				var j=0;
 				var menupage = document.getElementById("Tasksix");
 				var maincontent=document.getElementById("maincont");
-				var footercont=document.getElementById("footerlogo");
+				var footercont=document.getElementById("Footertag");
 				if(n==0){
 					menupage.style.display="none";
-					footercont.style.display="grid";
 					maincontent.style.display="grid";
+					footercont.style.display="grid";
 				}
 				if(n==1){
+					footercont.style.display="none"
 					menupage.style.display="grid";
 					maincontent.style.display="none";
-					footercont.style.display="none";
 				}
 			}
 			
@@ -96,9 +99,9 @@
 			<div class="slider-cont" id="lijeva"></div>
 			<div class="slider-cont" id="srednja"></div>
 			<div class="slider-cont" id="desna"></div>
+			<button id="prevy" onclick="nextgal(-1)"></button>
+			<button id="nexty" onclick="nextgal(-1)"></button>
 		</div>
-		<button id="prevy" onclick="nextgal(-1)"></button>
-		<button id="nexty" onclick="nextgal(-1)"></button>
 
 		<script>
 		var galerijaIndex= 1;
@@ -155,16 +158,47 @@
 			</div>
 		</div>
 		<button class="fillme"> Hover to have solid fill </button>
-	</div>
-	<footer id="footerlogo" class="grid">
-		<div class="copyright-contain">
-			<!--<p>© 2019. Notus IT d.o.o.</p>-->
-		</div>
-		<div class="mainfooter">
-			<div class="logo-contain"></div>
-		</div>
-	</footer>
-
+	</div>	
 </main>
+<!--<footer id="footerlogo" class="grid">
+	<div class="mainfooter"></div>
+	<div id="footerlogopic">
+		<img src="Notus-footer-logo.svg" alt="logo">
+	</div>
+	<div class="copyright-contain">
+		© 2019. Notus IT d.o.o.
+	</div>
+</footer>
+
+	<script>
+			var sliderIndex = 1;
+			showSlides(sliderIndex);
+			function iduci(n) {
+				showSlides(sliderIndex += n);
+			}
+			function showSlides(n) {		
+				var slides = document.getElementById("Tasktwo");
+				var stranice =document.getElementById("brstr");
+				if (n>3) {sliderIndex=1}
+				if (n < 1) {sliderIndex=3}
+				slides.style.backgroundImage="url(b"+sliderIndex+".jpg)";
+				stranice.InnerHTML=sliderIndex+"/3";
+
+			}
+		</script>	
+-->
+<footer id="Footertag" class="grid">
+	<div id="Bluefoot">
+		<div id="footerlogopic">
+			<img src="Notus-logo-footer.svg" alt="logo">
+		</div>
+		<div id="Lightfoot">
+			<p>
+				© 2019. Notus IT d.o.o.
+			</p>	
+		</div>
+	</div>
+</footer>	
+		
 </body>
 </html>
