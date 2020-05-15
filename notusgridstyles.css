@@ -143,8 +143,9 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 }
 #Taskthree{
 	height:auto;
-	grid-template-columns: 1fr 1.5fr 1fr;
-	grid-template-rows: 0.5fr 2fr 8fr;
+	grid-row-gap:4.629629vh;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 0.5fr 1fr 2fr;
 	grid-template-areas:
 	 ". title-wrap1 ."
 	 ". text-wrap1 ."
@@ -152,6 +153,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 }
 .title-wrap{
+
 	grid-area: title-wrap1;
 	justify-self:center;
 	align-self: center;
@@ -160,8 +162,6 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	font-size: 3rem;
 	text-align: center;
 	line-height: 3.2rem;
-	margin-top:2vh;
-	margin-bottom: 5vh;
 	color:#FFFFFF;
 	white-space: nowrap;
 }
@@ -172,31 +172,30 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 #Taskthree #text-wrap{
 	grid-area: text-wrap1;
 	margin:auto;
-	justify-self:center;
-	align-self: center;
-	justify-content: center;
-	height: 50vw;
 	font-family: Montserrat;
 	font-size:1.1rem;
-	line-height: 1.66em;
+	line-height: 1.3em;
 	letter-spacing: 0px;
 	max-width: 80vw;
-	width: 960px;
+	width: 50vw;
+	margin-bottom: 50px;
 	white-space: normal;
-	max-height: 86px;
+	max-height:25vh;
 	text-align: center;
+	height: 20vh;
+	color: #5C5C5C;
 }
 
 #gallery-wrap{
 	margin:auto;
+	margin-bottom: 5vh;
 	display: grid;	
-	width:990px;
+	width:64.0625vw;
 	max-width: 90vw;
-	grid-column-gap: 1.8rem;
-	grid-row-gap: 1.8rem;
-	
+	grid-column-gap: 1.5625vw;
+	grid-row-gap: 1.5625vw;
 	grid-area:gallery-wrap;
-	grid-template-columns: 1fr 1.7741fr 1fr;
+	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows: 2fr 1fr 1fr 2fr;
 	grid-template-areas: 
 		"lijeva gornja desna "
@@ -209,12 +208,10 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	width: auto;
 	max-width: 100%;
 	height: auto;
-	justify-content: center;
-	}
+	margin: auto;
+}
 
 #slika1{
-	align-self: center;
-	justify-self:center;
 	grid-area:lijeva;
 
 }
@@ -241,12 +238,11 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 #Taskfour{
 	max-height:87vh;
 	height:87vh;
-	width: 100vw;
-	justify-content: center;
-	grid-template-rows:1fr 3fr;
+	grid-template-columns:2fr 1fr 5fr 1fr 2fr;
+	grid-template-rows:1fr 4fr;
 	grid-template-areas: 
-		"title-wrap "
-		"slider-gal";
+		". . title-wrap . ."
+		". lgumb slider-gal dgumb .";
 	background-color: #081b2f;
 }
 
@@ -268,16 +264,17 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 
 #slider-galerija{
-	margin: auto;
 	grid-area:slider-gal;
-	display: grid;
-	grid-template-columns: 1fr 11fr 11fr 11fr 1fr;
-	grid-column-gap: 2vw;	
-	height: 50.92592vh;
-	max-height: 50.9259vh;
-	width:90vw;
-	max-width: 1050px;
-	grid-template-areas: "lgumb lijeva srednja desna dgumb";
+	display: flex;
+	flex-wrap: nowrap;
+	height: 50.9259vh;
+	width: 60vw;
+	min-width: 280px;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+
+
 }
 /*#slider-galerija > .slider-cont{
 	height: auto;
@@ -286,30 +283,38 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	margin: auto;
 */}
 .slider-cont{
-	height: 50.92592vh;
-	min-width: 80px;
-	width:16.14583vw;
-	min-height: 500px;
+	width: 16.145833vw;
+	height: 50.9259vh;
+	max-width: 310px;
+	max-height: 550px;
+
 }
 
 #lijeva{
+	min-height: 200px;
+	min-width: 80px;
+	align-self: center;
+	width: 16.14583vw;
+	height: 50.9259vh;
 	background: transparent url("1.jpg") 0% 0% no-repeat padding-box;
 	grid-area: lijeva;
 	background-size: contain;
-	height: 50.92592vh;
-	margin: auto;
 }
 #srednja{
+	min-height: 200px;
+	min-width: 80px;
+	width: 16.14583vw;
+	height: 50.9259vh;
 	background: transparent url("2.jpg") 0% 0% no-repeat padding-box;
 	grid-area: srednja;
 	background-size: contain;
-	height: 50.92592vh;
-	margin: auto;
 }
 
 #desna{
-	height: 50.92592vh;
-	margin: auto;
+	width: 16.14583vw;
+	height: 50.9259vh;
+	min-height: 200px;
+	min-width: 80px;
 	background: transparent url("3.jpg") 0% 0% no-repeat padding-box;
 	grid-area:desna;
 	background-size: contain;
@@ -332,17 +337,23 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	transform:matrix(-1,0,0,-1,0,0);
 	grid-area: dgumb;
 }
-
+.vl{
+	border-left:3px solid black;
+	height: 18.5185vh;
+	position: relative;
+	left: 50%;
+	top: -9.29529vh;
+}
 
 
 #Taskfive{
 	height:auto;
-	max-height:1500px;
+	max-height:990px;
 	margin: auto;
-	grid-template-rows: 3fr 0.1fr 1fr 0.5fr;
+	grid-row-gap: 8vh;
+	grid-template-rows:1fr 2fr 1fr;
 	grid-template-columns:1fr 2fr 1fr;
 	grid-template-areas:
-		"mapa mapa mapa"
 		". title-wrap ."
 		". textdio ."
 		". hbutton .";
@@ -350,7 +361,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 #Taskfive .title-wrap{
 	grid-area: title-wrap;
-	margin-top:100px;
+	margin:auto;
 	font-family:Montserrat;
 	font-weight:bold;
 	font-size: 3rem;
@@ -358,9 +369,10 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	color:#081B2F;
 }
 #mapa{
-	grid-area:mapa;
+	display: grid;
+	grid-template-columns: : 1fr 2fr 1fr;
 	max-height:600px;
-	height: 55.555vh;
+	height: auto;
 	width: 100%;
 	margin:0;
 }
@@ -381,16 +393,16 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 }
 .text-container{
 	grid-area:textdio;
-	min-width: 60vw;
+	width: 50vw;
 	height: auto;
-	margin-bottom: 2em;
 	margin-left: auto;
 	margin-right: auto;
+	display: block;
 }
 .tparatext p{
 	text-align: center;
 	font-family: Montserrat;
-	font-size: 1.2fr;
+	font-size: 1rem;
 	line-height: 1.5fr;
 	letter-spacing: 0px;
 	color: #5C5C5C;
@@ -399,19 +411,20 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 	justify-content: center;
 }
 .fillme{
+	min-width: 150px;
+	min-height: 60px;
 	max-width: 300px;
-	max-height: 9.375vh;
-	height: 9.375vh;
+	max-height: 120px;
+	height: 11.11vh;
+	width:15.625vw;
 	grid-area:hbutton;
 	border: 5px solid #F89D36;
 	opacity: 1;
 	background:#FFFFFF;
 	font-family: Montserrat;
-	font-size: 1.3rem;
+	font-size: 1.1em;
 	color: #081B2F;
 	font-weight: bold;
-	justify-self: center;
-	align-self: center;
 	margin: auto;
 
 }
@@ -453,6 +466,7 @@ img, #lijeva, #desna, #srednja, #slika1, #slika2,#slika3,#slika4{
 
 
 #Tasksix{
+	z-index: 5;
 	display: none;
 	max-height: 1080px;
 	height: 100vh;
